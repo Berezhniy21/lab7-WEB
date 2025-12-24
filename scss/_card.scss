@@ -1,0 +1,50 @@
+.card {
+  position: relative;
+  width: 400px;
+  padding: 40px;
+  background: $card-color;
+  border-radius: $border-radius;
+  text-align: center;
+  overflow: hidden;
+
+  &__title {
+    font-size: 32px;
+    color: $accent-color;
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    font-size: 18px;
+    color: $text-color;
+    margin-bottom: 30px;
+  }
+
+  &__button {
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: $border-radius;
+    background: $accent-color;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  &__snow {
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(white 2px, transparent 2px);
+    background-size: 40px 40px;
+    animation: snow 10s linear infinite;
+    pointer-events: none;
+  }
+}
+
+@keyframes snow {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 400px;
+  }
+}
