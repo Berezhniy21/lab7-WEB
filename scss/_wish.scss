@@ -1,0 +1,46 @@
+.wish {
+  padding: 80px 10%;
+  text-align: center;
+  background: #fff;
+
+  &__toggle {
+    display: none;
+  }
+
+  &__button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 30px;
+    background: $accent;
+    color: #fff;
+    border-radius: $radius;
+    cursor: pointer;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__messages {
+    position: relative;
+    margin-top: 40px;
+    height: 40px;
+  }
+
+  &__message {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    font-size: 20px;
+    color: $accent;
+    transition: opacity 0.5s;
+  }
+}
+
+/* CSS-псевдорандом */
+#wish-toggle:checked ~ .wish__messages .wish__message:nth-of-type(1),
+#wish-toggle:not(:checked) ~ .wish__messages .wish__message:nth-of-type(2) {
+  opacity: 1;
+}
